@@ -147,16 +147,20 @@ public class Agent : MonoBehaviour
 
     private Vector3 CalculateSeparation(IEnumerable<Agent> agents, float radius)
     {
-        Vector3 desired = default;
+        Vector3 desired = Vector3.zero;
         int count = 0;
 
         foreach (Agent item in agents)
         {
             if (item == this) continue;
             
-            if (InRange(item.transform.position, radius)) 
+            float distanceSqr = (item.transform.position - transform.position).sqrMagnitude;
+            
+            if (distanceSqr <= radius * radius && distanceSqr > 0.0001f) 
             {
-                desired += (item.transform.position - transform.position);
+                Vector3 awayFromNeighbor = transform.position - item.transform.position;
+                
+                desired += awayFromNeighbor.normalized / Mathf.Sqrt(distanceSqr);
                 count++;
             }
         }
@@ -226,7 +230,7 @@ public class Agent : MonoBehaviour
         }
 
         Vector3 desired = dir.normalized * speed;
-        return CalculateSteering(-desired);
+        return CalculateSteering(desired);
     }
 
     #endregion

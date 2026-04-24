@@ -50,9 +50,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\InterestObject.cs" />
+    <Compile Include="Assets\Scripts\FSM + Patrol\FSMAgent.cs" />
     <Compile Include="Assets\Scripts\Agent.cs" />
     <Compile Include="Assets\Scripts\Bounds.cs" />
+    <Compile Include="Assets\Scripts\Finite State Machine\FiniteStateMachine.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scripts\Finite State Machine\PatrolState.cs" />
+    <Compile Include="Assets\Scripts\FSM + Patrol\IdleState.cs" />
+    <Compile Include="Assets\Scripts\Finite State Machine\State.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

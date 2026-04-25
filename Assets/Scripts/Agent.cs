@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class Agent : MonoBehaviour
 {
-    private enum SteeringModes { Seek, Flee, Arrive, Pursuit, Evade, Flocking }
+    public enum SteeringModes { Seek, Flee, Arrive, Pursuit, Evade, Flocking }
 
     [Header("Stats")]
     [SerializeField]
@@ -13,7 +13,7 @@ public class Agent : MonoBehaviour
     [SerializeField]
     private float _viewRadius = 5f;
     [SerializeField]
-    private SteeringModes _currentMode;
+    public SteeringModes _currentMode;
     [SerializeField]
     private float _arriveRadius = 3f;
 
@@ -32,10 +32,13 @@ public class Agent : MonoBehaviour
     private Transform target;
     [SerializeField]
     private Agent targetAgent;
+    public float health = 100f;
 
     [Header("Interactions")]
     [SerializeField] private string _targetTagObject = "InterestObject";
     [SerializeField] private string _targetTagHunter = "Hunter";
+    
+    [SerializeField] private string _targetTagAgent = "Agent";
     [SerializeField] private float _damagePerSecond = 20f;
     [SerializeField] private float _eatDistance = 3f;
 
@@ -44,6 +47,15 @@ public class Agent : MonoBehaviour
     private Vector3 _velocity;
     public Vector3 Velocity => _velocity;
 
+    public float ViewRadius => _viewRadius;
+    public string TargetTagAgent => _targetTagAgent;
+    
+    public Agent TargetAgent => targetAgent;
+    public void SetTargetAgent(Agent targetAgent)
+    {
+        this.targetAgent = targetAgent;
+    }
+    
     private void Awake()
     {
         _allAgents.Add(this);
@@ -89,9 +101,9 @@ public class Agent : MonoBehaviour
                 InterestObject targetScript = target.GetComponent<InterestObject>();
                 if (targetScript != null) targetScript.RecieveDamage(_damagePerSecond * Time.deltaTime);
                 else
-                    {
-                        _currentMode = SteeringModes.Flocking;
-                    }
+                {
+                    _currentMode = SteeringModes.Flocking;
+                }
             }
         }
         else
@@ -286,5 +298,13 @@ public class Agent : MonoBehaviour
             Gizmos.DrawWireSphere(transform.position, _viewRadius);
         }
 
+    }
+    public void RecieveDamage(float amount) 
+    {
+        health -= amount;
+        if (health <= 0) 
+        {
+            Destroy(gameObject); 
+        }
     }
 }

@@ -7,8 +7,10 @@ public class FSMAgent : Agent
     [SerializeField]
     private float _speed = 3f;
     public float Speed => _speed;
-
-    
+    [SerializeField]
+    private float _timeBetweenAttacks = 3f;
+    private float _rangeAttackRadius = 7f;
+    private float _meleeChaseAttackRadius = 3f;
     [SerializeField]
     private PatrolData _patrolData;
 
@@ -20,12 +22,17 @@ public class FSMAgent : Agent
 
     public PatrolState Patrol { get; private set; }
 
+    public AttackState Attack { get; private set; }
+    public PursuitState Pursuit { get; private set; }
+
     private void Start() 
     {
         Idle = new(this);
         Patrol = new(_patrolData, this);
+        Attack = new(this);
         _fsm.AddState(Idle);
         _fsm.AddState(Patrol);
+        _fsm.AddState(Attack);
         _fsm.ChangeState(Idle);
     }
 

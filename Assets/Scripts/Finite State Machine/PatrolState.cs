@@ -20,16 +20,32 @@ public class PatrolState : State
 
     public override void Update()
     {
-        Transform nextWaypoint = _data.waypoints[_currentIndex];
-        if(Vector3.Distance(nextWaypoint.position, _data.transform.position) <= _data.waypointDistance)
+        Collider[] closeObjects = Physics.OverlapSphere(_agent.transform.position, _agent.ViewRadius);
+        foreach (var col in closeObjects)
         {
-            _currentIndex = _currentIndex + 1 < _data.waypoints.Count ? _currentIndex + 1 : 0;
-            nextWaypoint = _data.waypoints[_currentIndex];
+            if (col.CompareTag(_agent.TargetTagAgent)) 
+            {
+                _agent.SetTargetAgent(col.GetComponent<FSMAgent>());
+                break;
+            }
         }
-        
-        Vector3 dir = nextWaypoint.position - _data.transform.position;
-        _data.transform.position += _agent.Speed * Time.deltaTime * dir.normalized;
-        _data.transform.forward = dir;
+        if(_agent.TargetAgent != null)
+        {
+            _agent.FSM.ChangeState(_agent.Pursuit);
+        }
+        else
+        {
+            Transform nextWaypoint = _data.waypoints[_currentIndex];
+            if(Vector3.Distance(nextWaypoint.position, _data.transform.position) <= _data.waypointDistance)
+            {
+                _currentIndex = _currentIndex + 1 < _data.waypoints.Count ? _currentIndex + 1 : 0;
+                nextWaypoint = _data.waypoints[_currentIndex];
+            }
+            
+            Vector3 dir = nextWaypoint.position - _data.transform.position;
+            _data.transform.position += _agent.Speed * Time.deltaTime * dir.normalized;
+            _data.transform.forward = dir;
+        }
     }
     public override void Exit()
     {

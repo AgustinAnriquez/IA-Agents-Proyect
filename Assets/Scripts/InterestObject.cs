@@ -8,7 +8,6 @@ public class InterestObject : MonoBehaviour
         health -= amount;
         if (health <= 0) 
         {
-            // El objeto se destruye cuando los agentes terminan de "comerlo"
             Destroy(gameObject); 
         }
     }

@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 112503979}
   m_Layer: 0
   m_Name: Agent (1)
-  m_TagString: Untagged
+  m_TagString: Agent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,8 +159,10 @@ MonoBehaviour:
   _alignmentWeight: 1
   target: {fileID: 0}
   targetAgent: {fileID: 0}
+  health: 100
   _targetTagObject: InterestObject
   _targetTagHunter: Hunter
+  _targetTagAgent: Agent
   _damagePerSecond: 20
   _eatDistance: 1.5
 --- !u!4 &112503980
@@ -904,7 +906,7 @@ GameObject:
   - component: {fileID: 429994762}
   m_Layer: 0
   m_Name: Agent (3)
-  m_TagString: Untagged
+  m_TagString: Agent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -932,8 +934,10 @@ MonoBehaviour:
   _alignmentWeight: 1
   target: {fileID: 0}
   targetAgent: {fileID: 0}
+  health: 100
   _targetTagObject: InterestObject
   _targetTagHunter: Hunter
+  _targetTagAgent: Agent
   _damagePerSecond: 20
   _eatDistance: 1.5
 --- !u!4 &429994763
@@ -964,7 +968,7 @@ GameObject:
   - component: {fileID: 443745538}
   m_Layer: 0
   m_Name: Agent (7)
-  m_TagString: Untagged
+  m_TagString: Agent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -992,8 +996,10 @@ MonoBehaviour:
   _alignmentWeight: 1
   target: {fileID: 0}
   targetAgent: {fileID: 0}
+  health: 100
   _targetTagObject: InterestObject
   _targetTagHunter: Hunter
+  _targetTagAgent: Agent
   _damagePerSecond: 20
   _eatDistance: 1.5
 --- !u!4 &443745539
@@ -1228,7 +1234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FSMAgent
   _maxSpeed: 5
   _maxForce: 10
-  _viewRadius: 5
+  _viewRadius: 10
   _currentMode: 0
   _arriveRadius: 3
   _separationRadius: 2
@@ -1237,11 +1243,14 @@ MonoBehaviour:
   _alignmentWeight: 1
   target: {fileID: 0}
   targetAgent: {fileID: 0}
+  health: 100
   _targetTagObject: InterestObject
   _targetTagHunter: Hunter
+  _targetTagAgent: Agent
   _damagePerSecond: 20
   _eatDistance: 1.5
   _speed: 3
+  _timeBetweenAttacks: 3
   _patrolData:
     waypoints:
     - {fileID: 1094987105}
@@ -1285,7 +1294,7 @@ GameObject:
   - component: {fileID: 487011047}
   m_Layer: 0
   m_Name: Agent (2)
-  m_TagString: Untagged
+  m_TagString: Agent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1313,8 +1322,10 @@ MonoBehaviour:
   _alignmentWeight: 1
   target: {fileID: 0}
   targetAgent: {fileID: 0}
+  health: 100
   _targetTagObject: InterestObject
   _targetTagHunter: Hunter
+  _targetTagAgent: Agent
   _damagePerSecond: 20
   _eatDistance: 1.5
 --- !u!4 &487011048
@@ -2389,7 +2400,7 @@ GameObject:
   - component: {fileID: 1339632238}
   m_Layer: 0
   m_Name: Agent (5)
-  m_TagString: Untagged
+  m_TagString: Agent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2417,8 +2428,10 @@ MonoBehaviour:
   _alignmentWeight: 1
   target: {fileID: 0}
   targetAgent: {fileID: 0}
+  health: 100
   _targetTagObject: InterestObject
   _targetTagHunter: Hunter
+  _targetTagAgent: Agent
   _damagePerSecond: 20
   _eatDistance: 1.5
 --- !u!4 &1339632239
@@ -2561,7 +2574,7 @@ GameObject:
   - component: {fileID: 1412971899}
   m_Layer: 0
   m_Name: Agent (4)
-  m_TagString: Untagged
+  m_TagString: Agent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2589,8 +2602,10 @@ MonoBehaviour:
   _alignmentWeight: 1
   target: {fileID: 0}
   targetAgent: {fileID: 0}
+  health: 100
   _targetTagObject: InterestObject
   _targetTagHunter: Hunter
+  _targetTagAgent: Agent
   _damagePerSecond: 20
   _eatDistance: 1.5
 --- !u!4 &1412971900
@@ -2733,7 +2748,7 @@ GameObject:
   - component: {fileID: 1594246422}
   m_Layer: 0
   m_Name: Agent (6)
-  m_TagString: Untagged
+  m_TagString: Agent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2761,8 +2776,10 @@ MonoBehaviour:
   _alignmentWeight: 1
   target: {fileID: 0}
   targetAgent: {fileID: 0}
+  health: 100
   _targetTagObject: InterestObject
   _targetTagHunter: Hunter
+  _targetTagAgent: Agent
   _damagePerSecond: 20
   _eatDistance: 1.5
 --- !u!4 &1594246423

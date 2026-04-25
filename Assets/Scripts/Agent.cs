@@ -37,7 +37,7 @@ public class Agent : MonoBehaviour
     [SerializeField] private string _targetTagObject = "InterestObject";
     [SerializeField] private string _targetTagHunter = "Hunter";
     [SerializeField] private float _damagePerSecond = 20f;
-    [SerializeField] private float _eatDistance = 1.5f;
+    [SerializeField] private float _eatDistance = 3f;
 
     private static readonly List<Agent> _allAgents = new();
 
@@ -57,28 +57,41 @@ public class Agent : MonoBehaviour
 
     private void Update()
     {
-        Collider[] closeObjects = Physics.OverlapSphere(transform.position, _viewRadius);	
-        Transform ObjectTransform = null;
+        Collider[] closeObjects = Physics.OverlapSphere(transform.position, _viewRadius);
         foreach (var col in closeObjects)
         {
             if (col.CompareTag(_targetTagHunter)) 
             {
+                targetAgent = col.GetComponent<FSMAgent>();
                 break;
             }
             if (col.CompareTag(_targetTagObject))
             {
-                ObjectTransform = col.transform;
+                target = col.transform;
             }
         }
-        if (ObjectTransform != null)
+        if (targetAgent != null)
+        {
+            _currentMode = SteeringModes.Evade;
+            float dist = Vector3.Distance(transform.position, targetAgent.transform.position);
+            if (dist >= _viewRadius)
+            {
+                targetAgent = null;
+                _currentMode = SteeringModes.Flocking;
+            }
+        }
+        else if (target != null)
         {
             _currentMode = SteeringModes.Arrive;
-            target = ObjectTransform;
-            float dist = Vector3.Distance(transform.position, ObjectTransform.position);
+            float dist = Vector3.Distance(transform.position, target.position);
             if (dist <= _eatDistance)
             {
-                InterestObject targetScript = ObjectTransform.GetComponent<InterestObject>();
+                InterestObject targetScript = target.GetComponent<InterestObject>();
                 if (targetScript != null) targetScript.RecieveDamage(_damagePerSecond * Time.deltaTime);
+                else
+                    {
+                        _currentMode = SteeringModes.Flocking;
+                    }
             }
         }
         else

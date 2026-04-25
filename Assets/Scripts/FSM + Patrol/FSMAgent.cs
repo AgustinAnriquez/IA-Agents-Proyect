@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FSMAgent : MonoBehaviour
+public class FSMAgent : Agent
 {
 
     [SerializeField]

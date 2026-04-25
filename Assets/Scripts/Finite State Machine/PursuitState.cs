@@ -26,6 +26,10 @@ public class PursuitState : State
             _agent.SetTargetAgent(null);
             _agent.FSM.ChangeState(_agent.Patrol);
         }
+        else
+        {
+            _agent.FSM.ChangeState(_agent.Attack);
+        }
     }
     public override void Exit()
     {

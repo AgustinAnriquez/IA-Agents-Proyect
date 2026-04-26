@@ -56,6 +56,7 @@
     <Compile Include="Assets\Scripts\Finite State Machine\FiniteStateMachine.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\Finite State Machine\PursuitState.cs" />
+    <Compile Include="Assets\Scripts\Finite State Machine\CheeseState.cs" />
     <Compile Include="Assets\Scripts\Finite State Machine\PatrolState.cs" />
     <Compile Include="Assets\Scripts\FSM + Patrol\IdleState.cs" />
     <Compile Include="Assets\Scripts\Finite State Machine\AttackState.cs" />

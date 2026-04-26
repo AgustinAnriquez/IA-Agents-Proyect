@@ -7,6 +7,8 @@ public class PatrolState : State
     private FSMAgent _agent;
     private PatrolData _data;
     private int _currentIndex = 0;
+    float tiempoAcumulado = 0f;
+    int segundosEnteros = 0;
     
     public PatrolState(PatrolData data, FSMAgent agent) : base(agent.FSM) 
     {
@@ -16,6 +18,7 @@ public class PatrolState : State
     public override void Enter()
     {
         Debug.LogError("Entre a Patrol");
+        
     }
 
     public override void Update()
@@ -45,6 +48,21 @@ public class PatrolState : State
             Vector3 dir = nextWaypoint.position - _data.transform.position;
             _data.transform.position += _agent.Speed * Time.deltaTime * dir.normalized;
             _data.transform.forward = dir;
+        }
+         // 1. Sumar el tiempo de este frame
+        tiempoAcumulado += Time.deltaTime;
+
+        // 2. Si pasó 1 segundo o más, incrementar el entero
+        if (tiempoAcumulado >= 1f) {
+            segundosEnteros++;
+            Debug.Log("Segundos transcurridos: " + segundosEnteros);
+            
+            // 3. Reiniciar el acumulador o restar 1 para mayor precisión
+            tiempoAcumulado -= 1f; 
+        }
+        if(segundosEnteros % 5 == 0)
+        {   
+            _agent.FSM.ChangeState(_agent.Cheese);
         }
     }
     public override void Exit()

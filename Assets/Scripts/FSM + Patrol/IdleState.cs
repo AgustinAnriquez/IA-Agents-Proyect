@@ -22,7 +22,7 @@ public class IdleState : State
     {
         _timer += Time.deltaTime;
         if(_timer >= _timeToChangePatrol)
-        {
+        {   
             _agent.FSM.ChangeState(_agent.Patrol);
         }
     }

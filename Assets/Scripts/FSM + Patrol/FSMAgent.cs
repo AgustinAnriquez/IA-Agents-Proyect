@@ -1,8 +1,12 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class FSMAgent : Agent
 {
+
+    [SerializeField]
+    private GameObject cheesePrefab;
 
     [SerializeField]
     private float _speed = 3f;
@@ -24,15 +28,18 @@ public class FSMAgent : Agent
 
     public AttackState Attack { get; private set; }
     public PursuitState Pursuit { get; private set; }
+    public CheeseState Cheese { get; private set; }
 
     private void Start() 
     {
         Idle = new(this);
         Patrol = new(_patrolData, this);
         Attack = new(this);
+        Cheese = new CheeseState(cheesePrefab, this);
         _fsm.AddState(Idle);
         _fsm.AddState(Patrol);
         _fsm.AddState(Attack);
+        _fsm.AddState(Cheese);
         _fsm.ChangeState(Idle);
     }
 

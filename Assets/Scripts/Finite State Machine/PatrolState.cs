@@ -28,12 +28,15 @@ public class PatrolState : State
         {
             if (col.CompareTag(_agent.TargetTagAgent)) 
             {
+                Debug.Log("detecto un agente");
                 _agent.SetTargetAgent(col.GetComponent<FSMAgent>());
                 break;
             }
         }
+        Debug.Log("detecto un agente");
         if(_agent.TargetAgent != null)
         {
+            Debug.Log("va a perseguir un agente");
             _agent.FSM.ChangeState(_agent.Pursuit);
         }
         else
@@ -49,15 +52,9 @@ public class PatrolState : State
             _data.transform.position += _agent.Speed * Time.deltaTime * dir.normalized;
             _data.transform.forward = dir;
         }
-         // 1. Sumar el tiempo de este frame
         tiempoAcumulado += Time.deltaTime;
-
-        // 2. Si pasó 1 segundo o más, incrementar el entero
         if (tiempoAcumulado >= 1f) {
             segundosEnteros++;
-            Debug.Log("Segundos transcurridos: " + segundosEnteros);
-            
-            // 3. Reiniciar el acumulador o restar 1 para mayor precisión
             tiempoAcumulado -= 1f; 
         }
         if(segundosEnteros % 5 == 0)

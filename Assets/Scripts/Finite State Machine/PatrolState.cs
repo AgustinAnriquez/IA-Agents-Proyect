@@ -36,6 +36,10 @@ public class PatrolState : State
         {
             _agent.FSM.ChangeState(_agent.Gather);
         }
+        else if (_agent.TargetAgent != null && !_agent.TargetAgent._isDead)
+        {
+            _agent.FSM.ChangeState(_agent.Pursuit);
+        }
         else
         {
             Transform nextWaypoint = _data.waypoints[_currentIndex];

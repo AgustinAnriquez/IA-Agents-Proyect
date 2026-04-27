@@ -19,16 +19,18 @@ public class PursuitState : State
 
     public override void Update()
     {
-        _agent._currentMode = SteeringModes.Pursuit;
         float dist = Vector3.Distance(_agent.transform.position, _agent.TargetAgent.transform.position);
-        if (dist >= _agent.ViewRadius)
+        _agent._velocity += _agent.CalculatePursuit(_agent.TargetAgent);
+        _agent.transform.position += _agent.Velocity * Time.deltaTime;
+        _agent.transform.forward = _agent.Velocity;
+        _agent.transform.position = Bounds.Instance.CalculateBoundPosition( _agent.transform.position);
+        if (dist <= _agent.ViewRadius)
         {
-            _agent.SetTargetAgent(null);
-            _agent.FSM.ChangeState(_agent.Patrol);
+            Debug.Log("estamos atacando");
         }
         else
         {
-            _agent.FSM.ChangeState(_agent.Attack);
+            _agent.FSM.ChangeState(_agent.Patrol);
         }
     }
     public override void Exit()

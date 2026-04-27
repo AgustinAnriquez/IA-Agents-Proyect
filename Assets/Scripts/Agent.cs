@@ -206,7 +206,7 @@ public class Agent : MonoBehaviour
 
     #endregion
 
-    private Vector3 CalculatePursuit(Agent target) => CalculateSeek(GetFuturePosition(target));
+    public Vector3 CalculatePursuit(Agent target) => CalculateSeek(GetFuturePosition(target));
     private Vector3 CalculateEvade(Agent target) => CalculateFlee(GetFuturePosition(target));
 
     //FuturePosition = Position + Velocity * Time;

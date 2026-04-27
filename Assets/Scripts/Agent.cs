@@ -29,7 +29,7 @@ public class Agent : MonoBehaviour
 
     [Header("References")]
     [SerializeField]
-    private Transform target;
+    public Transform target;
     [SerializeField]
     private Agent targetAgent;
     public float health = 100f;
@@ -44,11 +44,12 @@ public class Agent : MonoBehaviour
 
     private static readonly List<Agent> _allAgents = new();
 
-    private Vector3 _velocity;
+    public Vector3 _velocity;
     public Vector3 Velocity => _velocity;
 
     public float ViewRadius => _viewRadius;
     public string TargetTagAgent => _targetTagAgent;
+    public bool _isDead = false;
     
     public Agent TargetAgent => targetAgent;
     public void SetTargetAgent(Agent targetAgent)
@@ -69,55 +70,58 @@ public class Agent : MonoBehaviour
 
     private void Update()
     {
-        Collider[] closeObjects = Physics.OverlapSphere(transform.position, _viewRadius);
-        foreach (var col in closeObjects)
+        if (!_isDead)
         {
-            if (col.CompareTag(_targetTagHunter)) 
+            Collider[] closeObjects = Physics.OverlapSphere(transform.position, _viewRadius);
+            foreach (var col in closeObjects)
             {
-                targetAgent = col.GetComponent<FSMAgent>();
-                break;
-            }
-            if (col.CompareTag(_targetTagObject))
-            {
-                target = col.transform;
-            }
-        }
-        if (targetAgent != null)
-        {
-            _currentMode = SteeringModes.Evade;
-            float dist = Vector3.Distance(transform.position, targetAgent.transform.position);
-            if (dist >= _viewRadius)
-            {
-                targetAgent = null;
-                _currentMode = SteeringModes.Flocking;
-            }
-        }
-        else if (target != null)
-        {
-            _currentMode = SteeringModes.Arrive;
-            float dist = Vector3.Distance(transform.position, target.position);
-            if (dist <= _eatDistance)
-            {
-                InterestObject targetScript = target.GetComponent<InterestObject>();
-                if (targetScript != null) targetScript.RecieveDamage(_damagePerSecond * Time.deltaTime);
-                else
+                if (col.CompareTag(_targetTagHunter)) 
                 {
+                    targetAgent = col.GetComponent<FSMAgent>();
+                    break;
+                }
+                if (col.CompareTag(_targetTagObject))
+                {
+                    target = col.transform;
+                }
+            }
+            if (targetAgent != null)
+            {
+                _currentMode = SteeringModes.Evade;
+                float dist = Vector3.Distance(transform.position, targetAgent.transform.position);
+                if (dist >= _viewRadius)
+                {
+                    targetAgent = null;
                     _currentMode = SteeringModes.Flocking;
                 }
             }
-        }
-        else
-        {
-            _currentMode = SteeringModes.Flocking;
-        }
-        if (_currentMode == SteeringModes.Flocking) CalculateFlocking();
-        else if (_currentMode == SteeringModes.Pursuit) _velocity += CalculatePursuit(targetAgent);
-        else if (_currentMode == SteeringModes.Evade) _velocity += CalculateEvade(targetAgent);
-        else _velocity += GetCurrentSteeringMode();
+            else if (target != null)
+            {
+                _currentMode = SteeringModes.Arrive;
+                float dist = Vector3.Distance(transform.position, target.position);
+                if (dist <= _eatDistance)
+                {
+                    InterestObject targetScript = target.GetComponent<InterestObject>();
+                    if (targetScript != null) targetScript.RecieveDamage(_damagePerSecond * Time.deltaTime);
+                    else
+                    {
+                        _currentMode = SteeringModes.Flocking;
+                    }
+                }
+            }
+            else
+            {
+                _currentMode = SteeringModes.Flocking;
+            }
+            if (_currentMode == SteeringModes.Flocking) CalculateFlocking();
+            else if (_currentMode == SteeringModes.Pursuit) _velocity += CalculatePursuit(targetAgent);
+            else if (_currentMode == SteeringModes.Evade) _velocity += CalculateEvade(targetAgent);
+            else _velocity += GetCurrentSteeringMode();
 
-        transform.position += _velocity * Time.deltaTime;
-        transform.forward = _velocity;
-        transform.position = Bounds.Instance.CalculateBoundPosition(transform.position);
+            transform.position += _velocity * Time.deltaTime;
+            transform.forward = _velocity;
+            transform.position = Bounds.Instance.CalculateBoundPosition(transform.position);
+        }   
     }
 
    
@@ -225,7 +229,7 @@ public class Agent : MonoBehaviour
         return CalculateSteering(-desired);
     }
 
-    private Vector3 CalculateArrive(Vector3 targetPosition)
+    public Vector3 CalculateArrive(Vector3 targetPosition)
     {
         Vector3 dir = (targetPosition - transform.position);
         float speed = _maxSpeed;
@@ -304,7 +308,11 @@ public class Agent : MonoBehaviour
         health -= amount;
         if (health <= 0) 
         {
-            Destroy(gameObject); 
+           _isDead = true;
         }
+    }
+    public void Destroy() 
+    {
+        Destroy(gameObject); 
     }
 }

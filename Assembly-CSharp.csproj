@@ -55,6 +55,7 @@
     <Compile Include="Assets\Scripts\Bounds.cs" />
     <Compile Include="Assets\Scripts\Finite State Machine\FiniteStateMachine.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scripts\Finite State Machine\GatherState.cs" />
     <Compile Include="Assets\Scripts\Finite State Machine\PursuitState.cs" />
     <Compile Include="Assets\Scripts\Finite State Machine\CheeseState.cs" />
     <Compile Include="Assets\Scripts\Finite State Machine\PatrolState.cs" />

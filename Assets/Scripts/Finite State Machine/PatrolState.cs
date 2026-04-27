@@ -28,16 +28,13 @@ public class PatrolState : State
         {
             if (col.CompareTag(_agent.TargetTagAgent)) 
             {
-                Debug.Log("detecto un agente");
-                _agent.SetTargetAgent(col.GetComponent<FSMAgent>());
+                _agent.SetTargetAgent(col.transform.parent.GetComponent<Agent>());
                 break;
             }
         }
-        Debug.Log("detecto un agente");
-        if(_agent.TargetAgent != null)
+        if(_agent.TargetAgent != null && _agent.TargetAgent._isDead)
         {
-            Debug.Log("va a perseguir un agente");
-            _agent.FSM.ChangeState(_agent.Pursuit);
+            _agent.FSM.ChangeState(_agent.Gather);
         }
         else
         {

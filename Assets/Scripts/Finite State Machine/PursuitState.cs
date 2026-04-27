@@ -26,7 +26,7 @@ public class PursuitState : State
         _agent.transform.position = Bounds.Instance.CalculateBoundPosition( _agent.transform.position);
         if (dist <= _agent.ViewRadius)
         {
-            Debug.Log("estamos atacando");
+            _agent.FSM.ChangeState(_agent.Attack);
         }
         else
         {

@@ -12,12 +12,9 @@ public class FSMAgent : Agent
     private float _speed = 3f;
     public float Speed => _speed;
     [SerializeField]
-    private float _timeBetweenAttacks = 3f;
+    public float _timeBetweenAttacks = 3f;
     public float _rangeAttackRadius = 7f;
     public float _meleeChaseAttackRadius = 3f;
-    
-    private float _currentTBATimer;
-    public float CurrentTBATimer { get => _currentTBATimer; set => _currentTBATimer = value; }
     [SerializeField]
     private PatrolData _patrolData;
 
@@ -50,16 +47,11 @@ public class FSMAgent : Agent
         _fsm.AddState(Pursuit);
         _fsm.AddState(Gather);
         _fsm.ChangeState(Idle);
-        _currentTBATimer = _timeBetweenAttacks;
     }
 
     
     private void Update()
     {
-        if (_currentTBATimer < _timeBetweenAttacks)
-        {
-            _currentTBATimer += Time.deltaTime;
-        }
         _fsm.Update();
     }
 

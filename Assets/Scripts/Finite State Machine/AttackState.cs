@@ -4,6 +4,7 @@ public class AttackState : State
 {
     private FSMAgent _agent;
 
+    float _timer = 0f;
     public AttackState(FSMAgent agent) : base(agent.FSM) 
     {
         _agent = agent;
@@ -16,33 +17,26 @@ public class AttackState : State
 
     public override void Update()
     {
-        float distance = Vector3.Distance(_agent.transform.position, _agent.TargetAgent.transform.position);
-        if (distance <= _agent._meleeChaseAttackRadius)
-        {
-            ExecuteMeleeAttack();
+        _timer += Time.deltaTime;
+        if(_timer >= _agent._timeBetweenAttacks)
+        {   
+            float dist = Vector3.Distance(_agent.transform.position, _agent.TargetAgent.transform.position);
+            if (dist <= _agent._meleeChaseAttackRadius)
+            {
+                _agent.TargetAgent.RecieveDamage(50f);
+                _timer = 0f;
+            }
+            else if (dist <= _agent._rangeAttackRadius)
+            {
+                _agent.TargetAgent.RecieveDamage(10f);
+                _timer = 0f;
+            }
+            else
+            {
+                _agent.FSM.ChangeState(_agent.Patrol);
+                _timer = 0f;
+            }
         }
-        else if (distance <= _agent._rangeAttackRadius)
-        {
-            ExecuteRangeAttack();
-        }
-    }
-
-    private void ExecuteMeleeAttack()
-    {
-        Debug.Log("¡Ataque Melee exitoso!");
-        FinishAttack();
-    }
-
-    private void ExecuteRangeAttack()
-    {
-        Debug.Log("¡Disparo de Rango exitoso!");
-        FinishAttack();
-    }
-
-    private void FinishAttack()
-    {
-        _agent.CurrentTBATimer = 0f; 
-        _agent.FSM.ChangeState(_agent.Patrol); 
     }
 
     public override void Exit() => Debug.Log("Saliendo de Attack");

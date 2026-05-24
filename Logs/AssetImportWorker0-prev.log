@@ -1,11 +1,19 @@
 [Licensing::Module] Trying to connect to existing licensing client channel...
 Built from '6000.3/staging' branch; Version is '6000.3.9f1 (7a9955a4f2fa) revision 8034645'; Using compiler version '194234433'; Build Type 'Release'
+<<<<<<< Updated upstream
 [Licensing::IpcConnector] Successfully connected to: "LicenseClient-IVAN" at "2026-05-24T21:24:03.8064955Z"
+=======
+>>>>>>> Stashed changes
 OS: 'Windows 11  (10.0.26200) Professional' Language: 'es' Physical Memory: 16088 MB
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-IVAN" at "2026-05-24T21:20:46.0882244Z"
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
 System  architecture: x64
 Process architecture: x64
+<<<<<<< Updated upstream
 Date: 2026-05-24T21:24:03Z
+=======
+Date: 2026-05-24T21:20:46Z
+>>>>>>> Stashed changes
 
 COMMAND LINE ARGUMENTS:
 C:\Program Files\Unity\Hub\Editor\6000.3.9f1\Editor\Unity.exe
@@ -19,7 +27,11 @@ C:/Proyectos Unity/IA-Agents-Proyect
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
+<<<<<<< Updated upstream
 59271
+=======
+54029
+>>>>>>> Stashed changes
 -licensingIpc
 LicenseClient-IVAN
 -job-worker-count
@@ -67,12 +79,21 @@ C:/Proyectos Unity/IA-Agents-Proyect
     "memorysetup-job-temp-allocator-block-size-background=1048576"
     "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
     "memorysetup-temp-allocator-size-cloud-worker=32768"
+<<<<<<< Updated upstream
 Player connection [30016]  Target information:
 
 Player connection [30016]  * "[IP] 192.168.100.3 [Port] 0 [Flags] 2 [Guid] 2010716074 [EditorId] 2010716074 [Version] 1048832 [Id] WindowsEditor(7,IVAN) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
 Player connection [30016] Host joined multi-casting on [225.0.0.222:54997]...
 Player connection [30016] Host joined alternative multi-casting on [225.0.0.222:34997]...
+=======
+Player connection [40640]  Target information:
+
+Player connection [40640]  * "[IP] 192.168.100.3 [Port] 0 [Flags] 2 [Guid] 3454161735 [EditorId] 3454161735 [Version] 1048832 [Id] WindowsEditor(7,IVAN) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [40640] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [40640] Host joined alternative multi-casting on [225.0.0.222:34997]...
+>>>>>>> Stashed changes
 JobSystem: Creating JobQueue using job-worker-count value 9
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -84,7 +105,11 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
+<<<<<<< Updated upstream
 Refreshing native plugins compatible for Editor in 3.55 ms, found 3 plugins.
+=======
+Refreshing native plugins compatible for Editor in 2.03 ms, found 3 plugins.
+>>>>>>> Stashed changes
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.3.9f1 (7a9955a4f2fa)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.3.9f1/Editor/Data/Resources/UnitySubsystems
@@ -100,6 +125,7 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.3.9f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.3.9f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.3.9f1/Editor/Data/MonoBleedingEdge/etc'
+<<<<<<< Updated upstream
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56632
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
@@ -112,11 +138,35 @@ Mono: successfully reloaded assembly
 - Finished resetting the current domain, in  0.716 seconds
 Domain Reload Profiling: 1369ms
 	BeginReloadAssembly (218ms)
+=======
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56672
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.9f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001590 seconds.
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.17.4+4293ba1
+  Session Id:              8348846722d04116b0bfe774c656dab1
+  Correlation Id:          02b497cb9e8754e4041f70583b9e0d6d
+  External correlation Id: 8276267221275745038
+  Machine Id:              eFHzlvWecw0sRc7hE8mYqpJ+UcQ=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-IVAN" (connect: 0.00s, validation: 0.00s, handshake: 1.02s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-IVAN-notifications" at "2026-05-24T21:20:47.1091426Z"
+[Licensing::Module] Licensing Background thread has ended after 1.02s
+- Loaded All Assemblies, in  0.385 seconds
+Native extension for WindowsStandalone target not found
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.370 seconds
+Domain Reload Profiling: 753ms
+	BeginReloadAssembly (129ms)
+>>>>>>> Stashed changes
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
+<<<<<<< Updated upstream
 	RebuildCommonClasses (63ms)
 	RebuildNativeTypeToScriptingClass (15ms)
 	initialDomainReloadingComplete (74ms)
@@ -138,6 +188,29 @@ Domain Reload Profiling: 1369ms
 			BeforeProcessingInitializeOnLoad (165ms)
 			ProcessInitializeOnLoadAttributes (283ms)
 			ProcessInitializeOnLoadMethodAttributes (113ms)
+=======
+	RebuildCommonClasses (37ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (43ms)
+	LoadAllAssembliesAndSetupDomain (161ms)
+		LoadAssemblies (126ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (158ms)
+			TypeCache.Refresh (156ms)
+				TypeCache.ScanAssembly (144ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (371ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (330ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (44ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (72ms)
+			ProcessInitializeOnLoadAttributes (146ms)
+			ProcessInitializeOnLoadMethodAttributes (64ms)
+>>>>>>> Stashed changes
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -163,6 +236,7 @@ Begin MonoManager ReloadAssembly
   Product: Unity Personal
   Type: Assigned
   Expiration: Unlimited
+<<<<<<< Updated upstream
 - Loaded All Assemblies, in  1.094 seconds
 Refreshing native plugins compatible for Editor in 0.91 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
@@ -253,3 +327,5 @@ Received Import Request.
 Start importing Assets/Scripts/Finite State Machine/GatherState.cs using Guid(81b62409d88142f4ab333fe967183ecc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1af6d0da3d003c836be1652451d04ef3') in 0.0050016 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
+=======
+>>>>>>> Stashed changes

@@ -52,6 +52,7 @@
     <Compile Include="Assets\Scripts\InterestObject.cs" />
     <Compile Include="Assets\Scripts\FSM + Patrol\FSMAgent.cs" />
     <Compile Include="Assets\Scripts\Agent.cs" />
+    <Compile Include="Assets\Scripts2doParcial\Node.cs" />
     <Compile Include="Assets\Scripts\Bounds.cs" />
     <Compile Include="Assets\Scripts\Finite State Machine\FiniteStateMachine.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />

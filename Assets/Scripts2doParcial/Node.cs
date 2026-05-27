@@ -49,22 +49,7 @@ void Start()
 
     void OnDrawGizmos()
     {
-        
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(transform.position, 0.3f);
-
-        
-        if (nodosConectados != null)
-        {
-            Gizmos.color = Color.purple; 
-            foreach (Node vecino in nodosConectados)
-            {
-                if (vecino != null)
-                {
-                    
-                    Gizmos.DrawLine(transform.position, vecino.transform.position);
-                }
-            }
-        }
+        Gizmos.color = new Color(0.2f, 0.2f, 0.2f, 0.5f); 
+        Gizmos.DrawSphere(transform.position, 0.2f);
     }
 }

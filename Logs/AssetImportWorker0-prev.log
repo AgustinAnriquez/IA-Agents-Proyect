@@ -1,11 +1,11 @@
 [Licensing::Module] Trying to connect to existing licensing client channel...
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-IVAN" at "2026-05-27T17:24:25.6551328Z"
 Built from '6000.3/staging' branch; Version is '6000.3.9f1 (7a9955a4f2fa) revision 8034645'; Using compiler version '194234433'; Build Type 'Release'
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-IVAN" at "2026-05-27T18:03:55.7014029Z"
 OS: 'Windows 11  (10.0.26200) Professional' Language: 'es' Physical Memory: 16088 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
 System  architecture: x64
 Process architecture: x64
-Date: 2026-05-27T17:24:25Z
+Date: 2026-05-27T18:03:55Z
 
 COMMAND LINE ARGUMENTS:
 C:\Program Files\Unity\Hub\Editor\6000.3.9f1\Editor\Unity.exe
@@ -19,7 +19,7 @@ C:/Proyectos Unity/IA-Agents-Proyect
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-49769
+64808
 -licensingIpc
 LicenseClient-IVAN
 -job-worker-count
@@ -67,12 +67,12 @@ C:/Proyectos Unity/IA-Agents-Proyect
     "memorysetup-job-temp-allocator-block-size-background=1048576"
     "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
     "memorysetup-temp-allocator-size-cloud-worker=32768"
-Player connection [6004]  Target information:
+Player connection [20712]  Target information:
 
-Player connection [6004]  * "[IP] 192.168.100.3 [Port] 0 [Flags] 2 [Guid] 166224633 [EditorId] 166224633 [Version] 1048832 [Id] WindowsEditor(7,IVAN) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [20712]  * "[IP] 192.168.100.3 [Port] 0 [Flags] 2 [Guid] 185276716 [EditorId] 185276716 [Version] 1048832 [Id] WindowsEditor(7,IVAN) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [6004] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [6004] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [20712] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [20712] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 9
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -84,7 +84,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 2.28 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 2.45 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.3.9f1 (7a9955a4f2fa)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.3.9f1/Editor/Data/Resources/UnitySubsystems
@@ -100,53 +100,44 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.3.9f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.3.9f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.3.9f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56196
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56116
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.9f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003126 seconds.
-[Licensing::Client] Handshaking with LicensingClient:
-  Version:                 1.17.4+4293ba1
-  Session Id:              5140b727bab047779a4ff7c622f89893
-  Correlation Id:          cb9535abdcc9089c718a9281489e969c
-  External correlation Id: 908775891803886058
-  Machine Id:              eFHzlvWecw0sRc7hE8mYqpJ+UcQ=
-[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-IVAN" (connect: 0.00s, validation: 0.00s, handshake: 1.40s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-IVAN-notifications" at "2026-05-27T17:24:27.0537Z"
-[Licensing::Module] Licensing Background thread has ended after 1.40s
-- Loaded All Assemblies, in  0.713 seconds
+Registered in 0.002527 seconds.
+- Loaded All Assemblies, in  0.506 seconds
 Native extension for WindowsStandalone target not found
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.491 seconds
-Domain Reload Profiling: 1201ms
-	BeginReloadAssembly (288ms)
+- Finished resetting the current domain, in  0.638 seconds
+Domain Reload Profiling: 1141ms
+	BeginReloadAssembly (169ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (49ms)
-	RebuildNativeTypeToScriptingClass (17ms)
-	initialDomainReloadingComplete (77ms)
-	LoadAllAssembliesAndSetupDomain (278ms)
-		LoadAssemblies (284ms)
+	RebuildCommonClasses (43ms)
+	RebuildNativeTypeToScriptingClass (15ms)
+	initialDomainReloadingComplete (64ms)
+	LoadAllAssembliesAndSetupDomain (213ms)
+		LoadAssemblies (165ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (272ms)
-			TypeCache.Refresh (270ms)
-				TypeCache.ScanAssembly (248ms)
+		AnalyzeDomain (209ms)
+			TypeCache.Refresh (207ms)
+				TypeCache.ScanAssembly (191ms)
 			BuildScriptInfoCaches (0ms)
-			ResolveRequiredComponents (1ms)
-	FinalizeReload (492ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (638ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (441ms)
+		SetupLoadedEditorAssemblies (581ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (63ms)
-			SetLoadedEditorAssemblies (4ms)
-			BeforeProcessingInitializeOnLoad (97ms)
-			ProcessInitializeOnLoadAttributes (199ms)
-			ProcessInitializeOnLoadMethodAttributes (78ms)
+			InitializePlatformSupportModulesInManaged (59ms)
+			SetLoadedEditorAssemblies (7ms)
+			BeforeProcessingInitializeOnLoad (114ms)
+			ProcessInitializeOnLoadAttributes (273ms)
+			ProcessInitializeOnLoadMethodAttributes (127ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -155,14 +146,25 @@ Domain Reload Profiling: 1201ms
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
+[Licensing::Module] Licensing is not yet initialized.
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.17.4+4293ba1
+  Session Id:              8449204d6150407ca57a6861e7501ad2
+  Correlation Id:          cb9535abdcc9089c718a9281489e969c
+  External correlation Id: 4537449386407498794
+  Machine Id:              eFHzlvWecw0sRc7hE8mYqpJ+UcQ=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-IVAN" (connect: 0.00s, validation: 0.00s, handshake: 2.32s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-IVAN-notifications" at "2026-05-27T18:03:58.0219298Z"
+[Licensing::Module] Licensing Background thread has ended after 2.32s
+[Licensing::Module] Licensing is initialized (took 0.01s).
 [Licensing::Client] Successfully resolved entitlement details
 [Licensing::Module] License group:
   Id: 4673892186109-UnityPersXXXX
   Product: Unity Personal
   Type: Assigned
   Expiration: Unlimited
-- Loaded All Assemblies, in  1.307 seconds
-Refreshing native plugins compatible for Editor in 1.58 ms, found 3 plugins.
+- Loaded All Assemblies, in  0.837 seconds
+Refreshing native plugins compatible for Editor in 1.08 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
@@ -170,236 +172,234 @@ Package Manager log level set to [2]
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.411 seconds
-Domain Reload Profiling: 2713ms
-	BeginReloadAssembly (210ms)
+- Finished resetting the current domain, in  1.015 seconds
+Domain Reload Profiling: 1848ms
+	BeginReloadAssembly (211ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (6ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (38ms)
-	RebuildCommonClasses (46ms)
-	RebuildNativeTypeToScriptingClass (15ms)
-	initialDomainReloadingComplete (46ms)
-	LoadAllAssembliesAndSetupDomain (986ms)
-		LoadAssemblies (590ms)
+		CreateAndSetChildDomain (33ms)
+	RebuildCommonClasses (42ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (39ms)
+	LoadAllAssembliesAndSetupDomain (526ms)
+		LoadAssemblies (375ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (511ms)
-			TypeCache.Refresh (379ms)
-				TypeCache.ScanAssembly (350ms)
-			BuildScriptInfoCaches (111ms)
-			ResolveRequiredComponents (16ms)
-	FinalizeReload (1412ms)
+		AnalyzeDomain (263ms)
+			TypeCache.Refresh (182ms)
+				TypeCache.ScanAssembly (167ms)
+			BuildScriptInfoCaches (65ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (1016ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1071ms)
+		SetupLoadedEditorAssemblies (765ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (170ms)
+			ProcessInitializeOnLoadAttributes (448ms)
+			ProcessInitializeOnLoadMethodAttributes (118ms)
+			AfterProcessingInitializeOnLoad (21ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (15ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
+Refreshing native plugins compatible for Editor in 2.60 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 16 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6199 unused Assets / (4.4 MB). Loaded Objects now: 6998.
+Memory consumption went from 144.4 MB to 140.0 MB.
+Total: 14.276800 ms (FindLiveObjects: 1.156700 ms CreateObjectMapping: 1.378300 ms MarkObjects: 8.766000 ms  DeleteObjects: 2.974200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 631234.715136 seconds.
+  path: Assets/Scripts2doParcial/PathfinderManager.cs
+  artifactKey: Guid(f04e87df48daa784b85aad02f9d9f925) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts2doParcial/PathfinderManager.cs using Guid(f04e87df48daa784b85aad02f9d9f925) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'df1ac1f0452766f0c4ab80594de773c3') in 0.0086165 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Scripts2doParcial/PathfinderManager.cs
+  artifactKey: Guid(f04e87df48daa784b85aad02f9d9f925) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scripts2doParcial/PathfinderManager.cs using Guid(f04e87df48daa784b85aad02f9d9f925) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8bf1d62b2c33b4665191c25fd16b3aac') in 0.1483842 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.250 seconds
+Refreshing native plugins compatible for Editor in 2.81 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.302 seconds
+Domain Reload Profiling: 2545ms
+	BeginReloadAssembly (350ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (11ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (72ms)
+	RebuildCommonClasses (64ms)
+	RebuildNativeTypeToScriptingClass (21ms)
+	initialDomainReloadingComplete (51ms)
+	LoadAllAssembliesAndSetupDomain (754ms)
+		LoadAssemblies (645ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (288ms)
+			TypeCache.Refresh (14ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (255ms)
+			ResolveRequiredComponents (15ms)
+	FinalizeReload (1303ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (984ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (7ms)
+			BeforeProcessingInitializeOnLoad (262ms)
+			ProcessInitializeOnLoadAttributes (582ms)
+			ProcessInitializeOnLoadMethodAttributes (112ms)
+			AfterProcessingInitializeOnLoad (17ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (35ms)
+Refreshing native plugins compatible for Editor in 2.10 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 16 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6195 unused Assets / (4.5 MB). Loaded Objects now: 7016.
+Memory consumption went from 153.8 MB to 149.3 MB.
+Total: 12.115200 ms (FindLiveObjects: 0.959100 ms CreateObjectMapping: 0.801100 ms MarkObjects: 7.195800 ms  DeleteObjects: 3.157600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 17.191705 seconds.
+  path: Assets/Scripts2doParcial/PathfinderManager.cs
+  artifactKey: Guid(f04e87df48daa784b85aad02f9d9f925) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts2doParcial/PathfinderManager.cs using Guid(f04e87df48daa784b85aad02f9d9f925) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8b25c78fe59f968b386c4536913dc8d7') in 0.0107916 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+- Loaded All Assemblies, in  2.532 seconds
+Refreshing native plugins compatible for Editor in 3.74 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.384 seconds
+Domain Reload Profiling: 3917ms
+	BeginReloadAssembly (952ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (51ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (1ms)
+		CreateAndSetChildDomain (301ms)
+	RebuildCommonClasses (110ms)
+	RebuildNativeTypeToScriptingClass (29ms)
+	initialDomainReloadingComplete (75ms)
+	LoadAllAssembliesAndSetupDomain (1365ms)
+		LoadAssemblies (1227ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (497ms)
+			TypeCache.Refresh (54ms)
+				TypeCache.ScanAssembly (2ms)
+			BuildScriptInfoCaches (403ms)
+			ResolveRequiredComponents (24ms)
+	FinalizeReload (1385ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1072ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (3ms)
 			SetLoadedEditorAssemblies (10ms)
-			BeforeProcessingInitializeOnLoad (300ms)
-			ProcessInitializeOnLoadAttributes (632ms)
-			ProcessInitializeOnLoadMethodAttributes (111ms)
-			AfterProcessingInitializeOnLoad (15ms)
-			EditorAssembliesLoaded (0ms)
+			BeforeProcessingInitializeOnLoad (293ms)
+			ProcessInitializeOnLoadAttributes (615ms)
+			ProcessInitializeOnLoadMethodAttributes (132ms)
+			AfterProcessingInitializeOnLoad (16ms)
+			EditorAssembliesLoaded (3ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (11ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
-Refreshing native plugins compatible for Editor in 2.25 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (34ms)
+Refreshing native plugins compatible for Editor in 3.53 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 16 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 6198 unused Assets / (4.3 MB). Loaded Objects now: 6997.
-Memory consumption went from 146.2 MB to 141.9 MB.
-Total: 10.690300 ms (FindLiveObjects: 0.898100 ms CreateObjectMapping: 0.459100 ms MarkObjects: 6.657800 ms  DeleteObjects: 2.673400 ms)
+Unloading 6195 unused Assets / (3.7 MB). Loaded Objects now: 7019.
+Memory consumption went from 153.6 MB to 149.9 MB.
+Total: 13.283600 ms (FindLiveObjects: 1.152600 ms CreateObjectMapping: 0.751000 ms MarkObjects: 8.497700 ms  DeleteObjects: 2.881000 ms)
 
+Prepare: number of updated asset objects reloaded= 0
 ========================================================================
 Received Import Request.
-  Time since last request: 628865.617806 seconds.
-  path: Assets/Scenes/Parcial2.unity
-  artifactKey: Guid(4ad0f1ee936f36f4395876871d12ac14) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Scenes/Parcial2.unity using Guid(4ad0f1ee936f36f4395876871d12ac14) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'fceac4c1605f32d152f107389b6d3cec') in 0.092004 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+  Time since last request: 1691.042618 seconds.
+  path: Assets/Scripts2doParcial/PathfinderManager.cs
+  artifactKey: Guid(f04e87df48daa784b85aad02f9d9f925) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts2doParcial/PathfinderManager.cs using Guid(f04e87df48daa784b85aad02f9d9f925) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b9c464265d50c4f70081d857f0a0d000') in 0.0361291 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
-Received Import Request.
-  Time since last request: 196.111435 seconds.
-  path: Assets/Prefabs2doParcial/NodosNivel (1) 1.prefab
-  artifactKey: Guid(e87a1177b35925441ba86da3706cfa19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs2doParcial/NodosNivel (1) 1.prefab using Guid(e87a1177b35925441ba86da3706cfa19) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1f5498cb6949a4d584f1e17adf897ebc') in 0.0333663 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+Received Prepare
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+- Loaded All Assemblies, in  0.815 seconds
+Refreshing native plugins compatible for Editor in 1.37 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.718 seconds
+Domain Reload Profiling: 1533ms
+	BeginReloadAssembly (251ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (58ms)
+	RebuildCommonClasses (42ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (32ms)
+	LoadAllAssembliesAndSetupDomain (475ms)
+		LoadAssemblies (377ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (213ms)
+			TypeCache.Refresh (11ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (187ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (719ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (560ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (154ms)
+			ProcessInitializeOnLoadAttributes (329ms)
+			ProcessInitializeOnLoadMethodAttributes (64ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (18ms)
+Refreshing native plugins compatible for Editor in 1.72 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 16 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6195 unused Assets / (4.4 MB). Loaded Objects now: 7022.
+Memory consumption went from 153.7 MB to 149.3 MB.
+Total: 8.450000 ms (FindLiveObjects: 0.632000 ms CreateObjectMapping: 0.516600 ms MarkObjects: 4.947700 ms  DeleteObjects: 2.352700 ms)
 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Prefabs2doParcial/NodosNivel (5).prefab
-  artifactKey: Guid(3151668e96c25e843adae664484b894e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs2doParcial/NodosNivel (5).prefab using Guid(3151668e96c25e843adae664484b894e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '07eef621baa7b256877edd737ecc0689') in 0.002786 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Prefabs2doParcial/NodosNivel (21).prefab
-  artifactKey: Guid(fd1219f889a211c4f82d32b7c2ed716d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs2doParcial/NodosNivel (21).prefab using Guid(fd1219f889a211c4f82d32b7c2ed716d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9f7f948c40c0130f9ccc66e83a368e9e') in 0.0029372 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Prefabs2doParcial/NodosNivel (18).prefab
-  artifactKey: Guid(0c2c372372cdba447906c0ae5fb97506) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs2doParcial/NodosNivel (18).prefab using Guid(0c2c372372cdba447906c0ae5fb97506) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'dd78a0b9ee47652baa4bacc76ae1a83b') in 0.0020074 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000036 seconds.
-  path: Assets/Prefabs2doParcial/NodosNivel (9).prefab
-  artifactKey: Guid(f861ce4413380724480f6de2a8d5b3a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs2doParcial/NodosNivel (9).prefab using Guid(f861ce4413380724480f6de2a8d5b3a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '64687746108611aae4367cae77e974c2') in 0.0022712 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Prefabs2doParcial/NodosNivel (4).prefab
-  artifactKey: Guid(c6ac5f310cdd9c74e8a865d8bcfb1490) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs2doParcial/NodosNivel (4).prefab using Guid(c6ac5f310cdd9c74e8a865d8bcfb1490) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e13cc825d85c8bebe51d7cdcda411cb9') in 0.0020281 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Prefabs2doParcial/NodosNivel (3).prefab
-  artifactKey: Guid(439cad5821a03504491d967e8fb1b177) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs2doParcial/NodosNivel (3).prefab using Guid(439cad5821a03504491d967e8fb1b177) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2bffbc5c387bb9134ca525aa71bc4b5b') in 0.0021201 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Prefabs2doParcial/NodosNivel (7).prefab
-  artifactKey: Guid(feeda30fa7778c7409a70b95221cc7cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs2doParcial/NodosNivel (7).prefab using Guid(feeda30fa7778c7409a70b95221cc7cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd484a6dc336c62ff021471e289b1e79a') in 0.0025805 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Prefabs2doParcial/NodosNivel (12).prefab
-  artifactKey: Guid(01dc35631a68822449f07fe3cc4fcb70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs2doParcial/NodosNivel (12).prefab using Guid(01dc35631a68822449f07fe3cc4fcb70) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '765546f1c5c4242fa6fbda9d5fea2089') in 0.0025805 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Prefabs2doParcial/NodosNivel (20).prefab
-  artifactKey: Guid(760a54dc09a2ac548b2543cfebc04a34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs2doParcial/NodosNivel (20).prefab using Guid(760a54dc09a2ac548b2543cfebc04a34) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6269b7c33d86b378d84fd61278ad4c0f') in 0.0020262 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/Prefabs2doParcial/NodosNivel (19).prefab
-  artifactKey: Guid(dd3bdeed2981f9e44aa71c57fcc0cc2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs2doParcial/NodosNivel (19).prefab using Guid(dd3bdeed2981f9e44aa71c57fcc0cc2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'dc2bb45ad7d5be3666e756c1fab0559f') in 0.002899 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Prefabs2doParcial/NodosNivel (14).prefab
-  artifactKey: Guid(f4f8591d1c411e34c81e72c85300f988) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs2doParcial/NodosNivel (14).prefab using Guid(f4f8591d1c411e34c81e72c85300f988) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '31387e80c72ad4dbe4527e9b3b2a904c') in 0.0020971 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.414638 seconds.
-  path: Assets/Prefabs2doParcial/NodosNivel (11).prefab
-  artifactKey: Guid(892767b1024610a46b5e6e74c92ccfaa) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Prefabs2doParcial/NodosNivel (11).prefab using Guid(892767b1024610a46b5e6e74c92ccfaa) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '01a1c4f430688ddc09f3129d7e14c27c') in 0.055729 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Prefabs2doParcial/NodosNivel (16).prefab
-  artifactKey: Guid(a3bed60456b60e549b40de878c3d211d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Prefabs2doParcial/NodosNivel (16).prefab using Guid(a3bed60456b60e549b40de878c3d211d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1bd4817081898fbc1e35dc56c5ce8ce4') in 0.0067237 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Prefabs2doParcial/NodosNivel (1) 1.prefab
-  artifactKey: Guid(e87a1177b35925441ba86da3706cfa19) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Prefabs2doParcial/NodosNivel (1) 1.prefab using Guid(e87a1177b35925441ba86da3706cfa19) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5019e493cadec895bf6a903e58ea6de5') in 0.006912 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000031 seconds.
-  path: Assets/Prefabs2doParcial/NodosNivel (18).prefab
-  artifactKey: Guid(0c2c372372cdba447906c0ae5fb97506) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Prefabs2doParcial/NodosNivel (18).prefab using Guid(0c2c372372cdba447906c0ae5fb97506) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '4076a99cfbca51b4734b12a30f5cd54d') in 0.0050426 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Prefabs2doParcial/NodosNivel (4).prefab
-  artifactKey: Guid(c6ac5f310cdd9c74e8a865d8bcfb1490) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Prefabs2doParcial/NodosNivel (4).prefab using Guid(c6ac5f310cdd9c74e8a865d8bcfb1490) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5004771184fcb304207e4cc220e98999') in 0.0058176 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Prefabs2doParcial/NodosNivel (7).prefab
-  artifactKey: Guid(feeda30fa7778c7409a70b95221cc7cf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Prefabs2doParcial/NodosNivel (7).prefab using Guid(feeda30fa7778c7409a70b95221cc7cf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8919d00c55873c587c81359ebc250fd7') in 0.0076741 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Prefabs2doParcial/NodosNivel (20).prefab
-  artifactKey: Guid(760a54dc09a2ac548b2543cfebc04a34) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Prefabs2doParcial/NodosNivel (20).prefab using Guid(760a54dc09a2ac548b2543cfebc04a34) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8d07f38bce5c4200c2bcf2296d9f3433') in 0.0084166 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Prefabs2doParcial/NodosNivel (10).prefab
-  artifactKey: Guid(eeb9ce6723bae9645bcd1fa2be935ea2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Prefabs2doParcial/NodosNivel (10).prefab using Guid(eeb9ce6723bae9645bcd1fa2be935ea2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8d7cf14f2046863f75798e28ea266324') in 0.0071199 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Prefabs2doParcial/NodosNivel 1.prefab
-  artifactKey: Guid(adc206703933f954e8fab8e787d790e8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Prefabs2doParcial/NodosNivel 1.prefab using Guid(adc206703933f954e8fab8e787d790e8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a26a5953c6a647313b1ddbb09540d243') in 0.0045477 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/Prefabs2doParcial/NodosNivel (8).prefab
-  artifactKey: Guid(3c4b13a2f45e0c146830c7ee2be395c0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Prefabs2doParcial/NodosNivel (8).prefab using Guid(3c4b13a2f45e0c146830c7ee2be395c0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c8405939daa8e6c4efa142c930c79ae5') in 0.0064755 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Prefabs2doParcial/NodosNivel (13).prefab
-  artifactKey: Guid(ba350f3569fabdf4fb04f35229f7ba2a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Prefabs2doParcial/NodosNivel (13).prefab using Guid(ba350f3569fabdf4fb04f35229f7ba2a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3414d13ce470477e04f806f29b5b7e65') in 0.0044541 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
-
+Prepare: number of updated asset objects reloaded= 0

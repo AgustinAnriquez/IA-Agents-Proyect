@@ -8,7 +8,7 @@ public class PathfinderManager : MonoBehaviour
     private Node[] todosLosNodosDelMapa;
     private Dictionary<Node, Node> padresDeNodos;
     
-    //Escanea todo el mapa y guarda en memoria todos los nodos 
+    
     void Awake() 
     {
 
@@ -16,7 +16,7 @@ public class PathfinderManager : MonoBehaviour
         padresDeNodos = new Dictionary<Node, Node>();
     }
 
-    //Limpia el diccionario y reinicia las distancias 
+    
     private void ReiniciarNodos()
     {
         foreach (Node nodo in todosLosNodosDelMapa)
@@ -28,7 +28,7 @@ public class PathfinderManager : MonoBehaviour
         padresDeNodos.Clear();
     }
 
-    //Le dice al nodo inicial en donde esta y al nodo final a donde tiene que llegar
+    
     public List<Node> EncontrarCamino(Node nodoInicio, Node nodoDestino)
     {
         ReiniciarNodos();
@@ -97,7 +97,6 @@ public class PathfinderManager : MonoBehaviour
     }
 
 
-    //Lee la informacion usando el diccionario una vez que encuentra el destino 
     private List<Node> ReconstruirCamino(Node nodoFinal)
     {
         List<Node> caminoFinal = new List<Node>();

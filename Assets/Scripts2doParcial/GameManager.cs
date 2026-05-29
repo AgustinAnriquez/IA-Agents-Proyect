@@ -88,4 +88,13 @@ public class GameManager : MonoBehaviour
             enemigo.GetComponent<Renderer>().material.color = Color.white;
         }
     }
+
+    public void AlertarAgentes(Vector3 posicionAvistamiento)
+    {
+        AgenteNPC[] enemigos = FindObjectsByType<AgenteNPC>(FindObjectsSortMode.None);
+        foreach (AgenteNPC enemigo in enemigos)
+        {
+            enemigo.AlertaRecibida(posicionAvistamiento);
+        }
+    }
 }

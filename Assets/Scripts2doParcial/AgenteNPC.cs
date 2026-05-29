@@ -27,59 +27,32 @@ public class AgenteNPC : MonoBehaviour
     [Header("Máquina de Estados")]
     public EstadoNPC estadoActual = EstadoNPC.Patrullando;
     public float tiempoRecalculo = 0.5f; 
-    public float tiempoParaOlvidar = 3f; 
     
-    private float temporizadorOlvido = 0f;
     private float temporizadorRuta = 0f;
     private List<Node> rutaPersecucion;
     private int indicePersecucion = 0;
+    private bool estaAlertadoGlobal = false;
+    private Vector3 ultimaPosicionAlerta;
 
     void Update()
     {
+        if (PuedeVerAlJugador())
+        {
+            if (estadoActual != EstadoNPC.Persiguiendo || !estaAlertadoGlobal)
+            {
+                estaAlertadoGlobal = true;
+                GameManager.Instancia.AlertarAgentes(player.position);
+            }
+        }
+
         switch (estadoActual)
         {
             case EstadoNPC.Patrullando:
                 EjecutarPatrulla();
-
-                if (PuedeVerAlJugador())
-                {
-                    estadoActual = EstadoNPC.Persiguiendo;
-                    GetComponent<Renderer>().material.color = Color.red;
-                    temporizadorOlvido = 0f; 
-                }
                 break;
 
             case EstadoNPC.Persiguiendo:
                 EjecutarPersecucion();
-                
-                if (!PuedeVerAlJugador())
-                {
-                    temporizadorOlvido += Time.deltaTime;
-                    GetComponent<Renderer>().material.color = new Color(1f, 0.5f, 0f); 
-
-                    if (temporizadorOlvido >= tiempoParaOlvidar)
-                    {
-                        estadoActual = EstadoNPC.Patrullando;
-                        GetComponent<Renderer>().material.color = Color.white; 
-                        temporizadorOlvido = 0f;
-
-                        float distanciaMin = Mathf.Infinity;
-                        for (int i = 0; i < rutaDePatrulla.Count; i++)
-                        {
-                            float dist = Vector3.Distance(transform.position, rutaDePatrulla[i].transform.position);
-                            if (dist < distanciaMin)
-                            {
-                                distanciaMin = dist;
-                                indicePatrulla = i; 
-                            }
-                        }
-                    }
-                }
-                else
-                {
-                    temporizadorOlvido = 0f;
-                    GetComponent<Renderer>().material.color = Color.red;
-                }
                 break;
         }
     }
@@ -107,11 +80,10 @@ public class AgenteNPC : MonoBehaviour
 
     private void EjecutarPersecucion()
     {
-        
         if (PuedeVerAlJugador())
         {
             Vector3 direccionAlJugador = (player.position - transform.position).normalized;
-            direccionAlJugador.y = 0; // Bloquea cabeceos extraños en rampas
+            direccionAlJugador.y = 0; 
 
             if (direccionAlJugador != Vector3.zero)
             {
@@ -119,27 +91,16 @@ public class AgenteNPC : MonoBehaviour
                 transform.rotation = Quaternion.Slerp(transform.rotation, rotacionDeseada, velocidadRotacion * Time.deltaTime);
             }
 
-            
             transform.position = Vector3.MoveTowards(transform.position, player.position, velocidad * Time.deltaTime);
+            ultimaPosicionAlerta = player.position;
 
-            
             temporizadorRuta += Time.deltaTime;
             if (temporizadorRuta >= tiempoRecalculo)
             {
                 temporizadorRuta = 0f; 
-                Node nodoInicio = managerRutas.EncontrarNodoMasCercano(transform.position);
-                Node nodoDestino = managerRutas.EncontrarNodoMasCercano(player.position);
-
-                if (nodoInicio != null && nodoDestino != null)
-                {
-                    rutaPersecucion = managerRutas.EncontrarCamino(nodoInicio, nodoDestino);
-                    
-                    if (rutaPersecucion != null && rutaPersecucion.Count > 1) indicePersecucion = 1; 
-                    else indicePersecucion = 0; 
-                }
+                RecalcularRutaAStar(player.position);
             }
         }
-        
         else 
         {
             if (rutaPersecucion != null && indicePersecucion < rutaPersecucion.Count)
@@ -161,18 +122,68 @@ public class AgenteNPC : MonoBehaviour
                     indicePersecucion++; 
                 }
             }
+            else
+            {
+                Vector3 direccionAlDestino = (ultimaPosicionAlerta - transform.position).normalized;
+                direccionAlDestino.y = 0;
+
+                if (Vector3.Distance(transform.position, ultimaPosicionAlerta) > 0.5f)
+                {
+                    if (direccionAlDestino != Vector3.zero)
+                    {
+                        Quaternion rotacionDeseada = Quaternion.LookRotation(direccionAlDestino);
+                        transform.rotation = Quaternion.Slerp(transform.rotation, rotacionDeseada, velocidadRotacion * Time.deltaTime);
+                    }
+                    transform.position = Vector3.MoveTowards(transform.position, ultimaPosicionAlerta, velocidad * Time.deltaTime);
+                }
+                else
+                {
+                    VolverAPatrullaje();
+                }
+            }
         }
 
-        
         if (Vector3.Distance(transform.position, player.position) < 1.2f)
         {
             GameManager.Instancia.Derrota();
         }
     }
 
+    private void RecalcularRutaAStar(Vector3 posicionDestino)
+    {
+        Node nodoInicio = managerRutas.EncontrarNodoMasCercano(transform.position);
+        Node nodoDestino = managerRutas.EncontrarNodoMasCercano(posicionDestino);
+
+        if (nodoInicio != null && nodoDestino != null)
+        {
+            rutaPersecucion = managerRutas.EncontrarCamino(nodoInicio, nodoDestino);
+            
+            if (rutaPersecucion != null && rutaPersecucion.Count > 1) indicePersecucion = 1; 
+            else indicePersecucion = 0; 
+        }
+    }
+
+    private void VolverAPatrullaje()
+    {
+        estadoActual = EstadoNPC.Patrullando;
+        estaAlertadoGlobal = false;
+        GetComponent<Renderer>().material.color = Color.white; 
+
+        float distanciaMin = Mathf.Infinity;
+        for (int i = 0; i < rutaDePatrulla.Count; i++)
+        {
+            float dist = Vector3.Distance(transform.position, rutaDePatrulla[i].transform.position);
+            if (dist < distanciaMin)
+            {
+                distanciaMin = dist;
+                indicePatrulla = i; 
+            }
+        }
+    }
+
     private bool PuedeVerAlJugador()
     {
-        if (player == null) return false;
+        if (player == null || !player.gameObject.activeSelf) return false;
 
         Vector3 posicionOjosNPC = transform.position + Vector3.up * alturaOjos;
         Vector3 posicionCentroJugador = player.position + Vector3.up * 1f;
@@ -194,6 +205,18 @@ public class AgenteNPC : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public void AlertaRecibida(Vector3 posicionInvestigar)
+    {
+        if (player == null || !player.gameObject.activeSelf) return;
+
+        estadoActual = EstadoNPC.Persiguiendo;
+        estaAlertadoGlobal = true;
+        GetComponent<Renderer>().material.color = Color.red;
+
+        ultimaPosicionAlerta = posicionInvestigar;
+        RecalcularRutaAStar(ultimaPosicionAlerta);
     }
 
     void OnDrawGizmos()

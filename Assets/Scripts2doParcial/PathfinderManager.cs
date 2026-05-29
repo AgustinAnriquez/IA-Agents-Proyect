@@ -114,4 +114,21 @@ public class PathfinderManager : MonoBehaviour
         caminoFinal.Reverse();
         return caminoFinal;
     }
+
+    public Node EncontrarNodoMasCercano(Vector3 posicionObjetivo)
+    {
+        Node nodoMasCercano = null;
+        float distanciaMinima = Mathf.Infinity;
+
+        foreach (Node nodo in todosLosNodosDelMapa)
+        {
+            float distancia = Vector3.Distance(posicionObjetivo, nodo.transform.position);
+            if (distancia < distanciaMinima)
+            {
+                distanciaMinima = distancia;
+                nodoMasCercano = nodo;
+            }
+        }
+        return nodoMasCercano;
+    }
 }

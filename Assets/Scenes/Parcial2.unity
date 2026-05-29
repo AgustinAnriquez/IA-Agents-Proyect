@@ -1661,7 +1661,6 @@ MonoBehaviour:
   vistaAngulo: 110
   estadoActual: 0
   tiempoRecalculo: 0.5
-  tiempoParaOlvidar: 3
 --- !u!65 &476450274
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1708,7 +1707,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 65791602a907cbe498658edbe766c5fb, type: 2}
+  - {fileID: 2100000, guid: 034968d3d9ca63d4bbe697abde1484ab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2381,7 +2380,6 @@ MonoBehaviour:
   vistaAngulo: 110
   estadoActual: 0
   tiempoRecalculo: 0.5
-  tiempoParaOlvidar: 3
 --- !u!65 &757355561
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2428,7 +2426,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 65791602a907cbe498658edbe766c5fb, type: 2}
+  - {fileID: 2100000, guid: 975d2d653494cc246aebc02b356a4ea4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3310,7 +3308,6 @@ MonoBehaviour:
   vistaAngulo: 110
   estadoActual: 0
   tiempoRecalculo: 0.5
-  tiempoParaOlvidar: 3
 --- !u!65 &1086702890
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4201,7 +4198,6 @@ MonoBehaviour:
   vistaAngulo: 110
   estadoActual: 0
   tiempoRecalculo: 0.5
-  tiempoParaOlvidar: 3
 --- !u!65 &1319725805
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4248,7 +4244,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 65791602a907cbe498658edbe766c5fb, type: 2}
+  - {fileID: 2100000, guid: 0571c44ed1216974aab310c91376b353, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

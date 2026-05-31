@@ -6,9 +6,8 @@ public class Node : MonoBehaviour
     public List<Node> nodosConectados = new List<Node>();
     public float radioDeBusqueda = 5f;
     public LayerMask capaMuros;
-    [HideInInspector] public float distanceFromStart; //Representa el puntaje de distancia real recorrida 
-    [HideInInspector] public float estimatedDistanceToTarget; //Almacena la estimación en línea recta desde este nodo hasta el destino
-
+    [HideInInspector] public float distanceFromStart; 
+    [HideInInspector] public float estimatedDistanceToTarget; 
 void Start()
     {
         Collider[] objetosCercanos = Physics.OverlapSphere(transform.position, radioDeBusqueda);

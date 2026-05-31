@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.InputSystem; // Obligatorio para que Unity no se queje
+using UnityEngine.InputSystem; 
 
 public class PlayerMovement : MonoBehaviour
 {
